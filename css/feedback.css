@@ -1,0 +1,71 @@
+.semi-block {
+    max-width: 550px;
+    max-height: 900px;
+    margin: 24px;
+}
+.part_2nd h3 {
+    margin: 24px;
+    font-weight: normal;
+    text-align: left;
+} 
+.left_align {
+    text-align: left;
+}
+.form_flex {
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+}
+.form_flex label {
+    font-size: 1.2vw;
+    margin: 8px;
+}
+
+
+
+
+.input_corr_1 {
+    border: 2px solid #F39F18;
+    border-radius: 15px;
+    width: 500px;
+    height: 50px;
+}
+.input_corr_2 {
+    border: 2px solid #F39F18;
+    border-radius: 15px;
+    width: 500px;
+    height: 200px;
+}
+.input_corr_3 {
+    width: 500px;
+    height: 200px;
+    font-size: 1.0vw;
+}
+.input_corr_4 {
+    background-color: #F39F18;
+    border: none;
+    border-radius: 15px;
+    width: 500px;
+    height: 50px;
+    font-size: 1.2vw;
+    color: white;
+}
+
+.visit_card {
+    border: 2px solid #F39F18;
+    border-radius: 15px;
+    background-color: white;
+    width: 500px;
+    max-height: 450px;
+}
+#row_foot_3alt {
+    display: flex;
+    justify-content: flex-start;
+    margin: 0px 24px;
+}
+
+#logo_balt {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

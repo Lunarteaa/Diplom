@@ -9,7 +9,7 @@ body {
     font-family: "Nunito";
 }
 main {
-    margin: 50px 200px;
+    margin: 36px 10%;
     height: 100%;
     padding-top: 100px;
     display: flex;
@@ -39,7 +39,7 @@ main {
 .category_block h2 {
     font-style: normal;
     font-weight: 400;
-    font-size: 1.5vw;
+    font-size: 2.0vw;
 }
 
 .category_block ul {
@@ -47,7 +47,7 @@ main {
     list-style-type: none;
 }
 .category_block li {
-    font-size: 1.12vw;
+    font-size: 1.2vw;
     line-height: 2vw;
 }
 .list {

@@ -1,0 +1,89 @@
+body {
+    background-color: #D8D8D8;
+    font-family: "Nunito";
+}
+main {
+    margin: 0px 10%;
+    height: 100%;
+    padding-top: 100px;
+}
+
+.part_2nd {
+   
+    margin: 36px;
+    padding: 36px;
+    /* border: 1px dotted black; */
+    box-sizing: border-box;
+}
+.part_2nd p {
+    font-size: 1.2vw;
+    text-align: justify;
+    padding: 0px 36px;
+} 
+.part_2nd h1 {
+    text-align: left;
+} 
+
+.row_in_2nd {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+.row_in_2nd div{
+    margin: 24px;
+}
+.row_in_left {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.img_pay {
+    padding: 18px;
+    width: 150px;
+    height: 95px;
+}
+.img_animal1 {
+    width: 750px;
+    height: 500px;
+    border-radius: 15px;
+    margin: 24px;
+}
+.float_text_l {
+    float: left;
+}
+.float_text_r {
+    float: right;
+}
+.figure_img_1 {
+    position: relative;
+    top: 40px;
+    right: -100px;
+    width: 60%; 
+    margin: -120px;
+    z-index: -1;
+}
+.figure_img_2 {
+    position: relative;
+    top: 40px;
+    left: -100px;
+    width: 60%; 
+    margin: -200px -100px;
+    z-index: -1;
+}
+
+.a_feedback {
+    color: #F39F18;
+    margin: 36px;
+    font-size: 1vw;
+}
+.p_center {
+    text-align: center;
+    margin: 44px;
+    font-size: 1.2vw;
+}
+.yellow_col {
+    color: #F39F18;
+}

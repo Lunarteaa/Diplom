@@ -19,6 +19,24 @@ header {
     padding: 40px;
 }
 
+h1{
+    font-size: 2.2vw;
+    margin-bottom: 24px;
+}
+h2{
+    font-size: 2.0vw;
+    margin-bottom: 24px;
+}
+h3{
+    font-size: 1.6vw;
+}
+h4{
+    font-size: 1.4vw;
+}
+p{
+    font-size: 1.2vw;
+}
+
 
 #space_t {
     display: flex;
@@ -56,5 +74,15 @@ header {
 #button_purchase{
     align-self: center;
     padding-right: 80px;
+}
+
+.link_head{
+    text-decoration: none;
+    transition: 0.5s;
+    color: black;
+}
+.link_head:hover {
+    color: #F39F18;
+    transition: 0.5s;
 }
 
