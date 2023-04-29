@@ -1,0 +1,26 @@
+@font-face {
+    font-family: 'Nunito';
+    src: url(/fonts/Nunito-VariableFont_wght.ttf) format("truetype");
+    font-style: normal ;
+    font-weight: normal;
+}
+body {
+    background: #D8D8D8 url(/img/logbg.png);
+    font-family: "Nunito";
+}
+main {
+    /* margin: 0px 10%; */
+    height: 100%;
+    padding-top: 100px;
+}
+
+.regist{
+    margin: 40px;
+    width: 1350px;
+    height: 750px;
+    background: rgba(243, 159, 24, 0.8);
+    border-radius: 15px;  
+}
+.regist h2{
+    color: #FFFFFF;  
+}
