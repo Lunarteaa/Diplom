@@ -1,0 +1,29 @@
+@font-face {
+    font-family: 'Nunito';
+    src: url(/fonts/Nunito-VariableFont_wght.ttf) format("truetype");
+    font-style: normal ;
+    font-weight: normal;
+}
+body {
+    background-color: #D8D8D8;
+    font-family: "Nunito";
+    font-size: 36px;
+}
+main {
+    /* margin: 0px 10%; */
+    height: 100%;
+    padding-top: 100px;
+}
+
+.tab.active {
+  background-color: #F39F18;
+  color: #000;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.tab-content {
+  display: none;
+}

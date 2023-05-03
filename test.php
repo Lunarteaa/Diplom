@@ -1,48 +1,66 @@
+<?php
+session_start();
+$user_id = $_SESSION['user_id']; // Получение ID пользователя из сессии
+
+// Подключение к базе данных и запрос данных пользователя
+$pdo = new PDO('mysql:host=localhost;dbname=purrfectpets', 'root', '');
+$stmt = $pdo->prepare('SELECT * FROM users WHERE id = :id');
+$stmt->execute(['id' => $user_id]);
+$user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+
+// обработка отправки формы
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // обработка данных из формы
+    $username = $_POST['username'];
+    $address = $_POST['address'];
+    $phone = $_POST['phone'];
+    $birthday = $_POST['birthday'];
+    $gender = $_POST['gender'];
+
+    // добавление записи в базу данных
+    $stmt = $pdo->prepare('INSERT INTO users (username, address, phone, birthday, gender) VALUES (:username, :address, :phone, :birthday, :gender)');
+    $stmt->execute([
+        'username' => $username,
+        'address' => $address,
+        'phone' => $phone,
+        'birthday' => $birthday,
+        'gender' => $gender,
+    ]);
+
+    exit();
+}
+?>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/footer.css">
-    <title>Document</title>
+	<title>Редактирование профиля</title>
 </head>
 <body>
-    <main> 
-    <?php
-include_once('php\simple_html_dom.php');
+	<h1>Редактирование профиля</h1>
+	<form action="lib\update_profile.php" method="POST">
+		<label for="username">Имя:</label>
+		<input type="text" name="username" id="username" value="<?php echo $user['username']; ?>"><br><br>
 
-// URL страницы, которую мы будем парсить
-$url = 'https://www.petshop.ru/catalog/dogs/odezd/all/';
+		<label for="email">Email:</label>
+		<input type="email" name="email" id="email" value="<?php echo $user['email']; ?>"><br><br>
 
-// Получаем HTML-код страницы
-$html = file_get_html($url);
+		<label for="phone">Телефон:</label>
+		<input type="tel" name="phone" id="phone" value="<?php echo $user['phone']; ?>"><br><br>
 
-// Находим контейнер с товарами
-$productsContainer = $html->find('.CatalogProducts_content__sAzhV', 0);
+		<label for="birthday">Дата рождения:</label>
+		<input type="date" name="birthday" id="birthday" value="<?php echo $user['birthday']; ?>"><br><br>
 
-// Получаем список товаров
-$products = $productsContainer->find('.CatalogItem_mobile__b+J33 CatalogItem_tablet__V38M4 CatalogItem_desktop__sVmIs CatalogItem_container__xZCy1');
+		<label for="gender">Пол:</label>
+		<select name="gender" id="gender">
+			<option value="male" <?php echo ($user['gender'] == 'male') ? 'selected' : ''; ?>>Мужской</option>
+			<option value="female" <?php echo ($user['gender'] == 'female') ? 'selected' : ''; ?>>Женский</option>
+		</select><br><br>
 
-// Проходимся по каждому товару и выводим нужную информацию
-foreach ($products as $product) {
-    $productName = $product->find('.CatalogItem_name__shuU7', 0)->plaintext;
-    $productPrice = $product->find('.Price_price__r9uMR CatalogItem_price_val__currentprice__K2pP2 Price_bold__4EywU', 0)->plaintext;
-    $productImage = $product->find('.CatalogItem_img__WxJJG', 0)->src;
+		<label for="address">Адрес:</label>
+		<textarea name="address" id="address"><?php echo $user['address']; ?></textarea><br><br>
 
-    // Выводим информацию о товаре в HTML
-    echo "<div class='product'>";
-    echo "<h2>$productName</h2>";
-    echo "<img src='$productImage'>";
-    echo "<p>$productPrice</p>";
-    echo "</div>";
-}
-
-?>
-      
-    </main>
-    
+		<input type="submit" value="Обновить профиль">
+	</form>
 </body>
 </html>
