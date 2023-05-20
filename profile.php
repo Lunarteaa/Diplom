@@ -27,21 +27,7 @@ $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
     <title>Профиль</title>
 </head>
 <body>
-<!-- <header>
-        <nav id="space_t">
-            <div id="logo_t">
-                <img src="img/logo.svg">
-                <a href="main.html"  class="link_head"><p id="name_t"><span id="letter">P</span>urrfect <span id="letter">P</span>ets</p></a>  
-            </div>
-            <ul id="row_ul">
-                <li id="header_li"><a href="categories.html" class="link_head">Каталог</a></li>
-                <li id="header_li"><a href="about.html" class="link_head">О нас</a></li>
-                <li id="header_li"><a href="dilivery.html" class="link_head">Доставка</a></li>
-                <li id="header_li"><a href="login.php" class="link_head">Личный кабинет</a></li>
-            </ul>
-            <img src="img/cart.svg" alt="корзина" id="button_purchase">
-        </nav>
-    </header> -->
+<?php include 'lib\heder.php'; ?>
     <main>
     <h2>Профиль</h2>
         <div class="tabs">
@@ -121,6 +107,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	<title>Редактирование профиля</title>
 </head>
 <body>
+<?php include 'lib\heder.php'; ?>
 	<h1>Редактирование профиля</h1>
 	<form action="lib\update_profile.php" method="POST">
 		<label for="username">Имя:</label>
@@ -154,5 +141,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <script src="js/profile.js"></script>
 
     </main>
+    <?php include 'lib\footer.php'; ?>
 </body>
 </html>

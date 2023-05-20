@@ -16,10 +16,10 @@
         </div>
         <div class="toggle">
             <nav class="horizontal">
-                    <div style="background-image: url(img/choice5.png);" class="link"><a href="main.html">Главная</a></div>
-                    <div style="background-image: url(img/choice1.png);" class="link"><a href="categories.html">Категории</a></div>
-                    <div style="background-image: url(img/choice2.png);" class="link"><a href="dilivery.html">Доставка</a></div>
-                    <div style="background-image: url(img/choice3.png);" class="link"><a href="about.html">О нас</a></div>
+                    <div style="background-image: url(img/choice5.png);" class="link"><a href="main.php">Главная</a></div>
+                    <div style="background-image: url(img/choice1.png);" class="link"><a href="categories.php">Категории</a></div>
+                    <div style="background-image: url(img/choice2.png);" class="link"><a href="dilivery.php">Доставка</a></div>
+                    <div style="background-image: url(img/choice3.png);" class="link"><a href="about.php">О нас</a></div>
                     <div style="background-image: url(img/choice4.png);" class="link"><a href="login.php" id="a5"><span>Личный</span><span>кабинет</span></a></div>
                     <!-- <li><a href="main.html" class="link"><img src="img/choice5.png" alt=""><p>Главная </p></a></li>
                     <li><a href="cathegories.html" class="link"><img src="img/choice1.png" alt=""><p>Категории</p></a></li>
@@ -29,7 +29,15 @@
             </nav>
         </div>
     </header>
-    <main><h1 class="Name_shop">Purrfect Pets</h1></main>
+    <main><h1 id="my-heading" class="Name_shop">Purrfect Pets</h1></main>
+    <script>
+        var heading = document.getElementById ('my-heading');
+      
+        heading.addEventListener('click', function() {
+          heading.classList.toggle('active');
+          toggle.classList.toggle('active');
+        });
+      </script>
     <script src="js/toggle-btn.js"></script>
 </body>
 </html>

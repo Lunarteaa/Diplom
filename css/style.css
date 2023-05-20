@@ -26,6 +26,8 @@ body{
     font-size: 200px;
     font-family: 'Nunito';
     font-weight: bold;
+    user-select: none;
+    cursor: pointer;
 }
 
 

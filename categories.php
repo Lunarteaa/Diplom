@@ -4,27 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/categories.css">
-    <link rel="stylesheet" href="css/footer.css">
     <title>Document</title>
 </head>
 <body>
-    <header>
-        <nav id="space_t">
-            <div id="logo_t">
-                <img src="img/logo.svg">
-                <a href="main.html"  class="link_head"><p id="name_t"><span id="letter">P</span>urrfect <span id="letter">P</span>ets</p></a>  
-            </div>
-            <ul id="row_ul">
-                <li id="header_li"><a href="main.html" class="link_head">Главная</a></li>
-                <li id="header_li"><a href="about.html" class="link_head">О нас</a></li>
-                <li id="header_li"><a href="dilivery.html" class="link_head">Доставка</a></li>
-                <li id="header_li"><a href="login.php" class="link_head">Личный кабинет</a></li>
-            </ul>
-            <img src="img/cart.svg" alt="корзина" id="button_purchase">
-        </nav>
-    </header>
+<?php include 'lib\heder.php'; ?>
     <main>
 
         <section class="category_block">
@@ -45,7 +29,7 @@
             </div>
             <div class="body_part">
                 <ul>
-                    <li><a href="test.php">Корм</a></li>
+                    <li><a href="test.html">Корм</a></li>
                     <li>Ветаптека</li>
                     <li>Лакомства</li>
                     <li>Лежаки и домики</li>
@@ -218,58 +202,6 @@
         </section>
 
     </main>
-    <footer>
-        <div id="space_b">
-            <div id="logo_b">
-                <img src="img/logo.svg" id="scale-pic">
-                <p id="name_b"><span id="letter">P</span>urrfect <span id="letter">P</span>ets</p> 
-            </div>
-            <div id="row_foot">
-                <section id="row_foot_2">
-                    <div>
-                        <h3 id="name_foot_list">Каталог</h3>
-                        <ul id="footer_ul">
-                            <li id="footer_li"><a href="">Товары для собак</a></li>
-                            <li id="footer_li"><a href="">Товары для кошек</a></li>
-                            <li id="footer_li"><a href="">Товары для мелких животных</a></li>
-                            <li id="footer_li"><a href="">Товары для птиц</a></li>
-                            <li id="footer_li"><a href="">Товары для аквариумистики</a></li>
-                            <li id="footer_li"><a href="">Товары для террариумистики</a></li>
-                        </ul>
-                    </div>
-                    <div> 
-                        <h3 id="name_foot_list">Покупателям</h3>
-                        <ul id="footer_ul">
-                            <li id="footer_li"><a href="main.html/#promotion">Акции</a></li>
-                            <li id="footer_li"><a href="#promotion">Новинки</a></li>
-                            <li id="footer_li"><a href="dilivery.html">Доставка и оплата</a></li>
-                            <li id="footer_li"><a href="return.html">Возврат товара</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h3 id="name_foot_list">Компания</h3>
-                        <ul id="footer_ul">
-                            <li id="footer_li"><a href="about.html">О нас</a></li>
-                            <li id="footer_li"><a href="feedback.html">Обратная связь</a></li>
-                        </ul>
-                    </div> 
-                </section>
-                <aside>
-                    <div id="row_foot_3">
-                        <img src="img/phone.svg">
-                        <p id="footer_p">+7 975 844 34 50</p>
-                    </div>
-                    <div id="row_foot_3">
-                        <img src="img/mail.svg">
-                        <p id="footer_p">purrfectpets@gmail.com</p>
-                    </div>
-                    <div id="row_foot_3">
-                        <img src="img/location.svg">
-                        <p id="footer_p">г. Ротсов-на-Дону пр.Буденовский 23</p>
-                    </div>
-                </aside>
-            </div>
-        </div>
-    </footer>
+    <?php include 'lib\footer.php'; ?>
 </body>
 </html>
