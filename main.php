@@ -37,6 +37,7 @@
             </div>
         </section>
         <section id="hello"></section>
+        <script src="js/slider.js"></script>
         <section class="part">
                 <h2  class="name_block">Товары, которые часто покупают</h2>
                 <div  class="row_in">
@@ -109,6 +110,5 @@
         </section>
     </main>
     <?php include 'lib\footer.php'; ?>
-    <script src="js/slider.js"></script>
 </body>
 </html>
