@@ -7,20 +7,179 @@
 body {
     background: #D8D8D8 url(/img/logbg.png);
     font-family: "Nunito";
+    margin: 0px;
 }
 main {
-    /* margin: 0px 10%; */
+    margin: 5% 10%;
     height: 100%;
     padding-top: 100px;
+    display: flex;
+    justify-content: center;
 }
 
 .regist{
-    margin: 40px;
-    width: 1350px;
-    height: 750px;
+    display: flex;
+    height: fit-content;
+    align-items: center;
+    flex-direction: column;
+    min-width: 50%;
+    padding: 24px;
+    padding-bottom: 48px;
     background: rgba(243, 159, 24, 0.8);
     border-radius: 15px;  
 }
+.correct { 
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+form {
+    width: 50%;
+}
+.correct label {
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 49px;
+    color: white;
+}
+.correct input {
+    margin-bottom: 1rem;
+    background: rgba(255, 255, 255, 0.3);
+    border: 2px solid #FFFFFF;
+    border-radius: 8px;
+    padding: 12px 24px;
+}
+
+.correct button {
+    margin-top: 18px;
+    background: rgba(255, 255, 255, 0.3);
+    text-transform: uppercase;
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 44px;
+    color: rgb(255, 255, 255);
+    border: 3px solid #FFFFFF;
+    border-radius: 15px;
+}
+.correct button :hover{
+    transition: 1s;
+    border: 3px solid #FFFFFF;
+    color: #FFFFFF;
+    background-color: #F39F18;
+}
+
 .regist h2{
+    text-align: center;
     color: #FFFFFF;  
+}
+.regist a {
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 33px;
+    color: #FFFFFF;
+    text-decoration: none;
+    /* identical to box height */
+    margin-top: 2rem;
+}
+
+.input_corr_log {
+    color: #000000;
+    font-family: "Nunito";
+    font-size: 1.2vw;
+}
+
+@media (min-device-width: 320px) and (max-device-width: 480px) {
+
+    main {
+        margin: 5% 10%;
+        height: 100%;
+        padding-top: 100px;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .regist{
+        display: flex;
+        height: fit-content;
+        align-items: center;
+        flex-direction: column;
+        min-width: 100%;
+        padding: 18px;
+        padding-bottom: 26px;
+        background: rgba(243, 159, 24, 0.8);
+        border-radius: 8px;  
+    }
+    .correct { 
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+    form {
+        width: 100%;
+    }
+    .correct label {
+        font-family: 'Nunito';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 49px;
+        color: white;
+    }
+    .correct input {
+        margin-bottom: 1rem;
+        background: rgba(255, 255, 255, 0.3);
+        border: 2px solid #FFFFFF;
+        border-radius: 8px;
+        padding: 12px 24px;
+    }
+    
+    .correct button {
+        margin-top: 18px;
+        background: rgba(255, 255, 255, 0.3);
+        text-transform: uppercase;
+        font-family: 'Nunito';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 36px;
+        color: rgb(255, 255, 255);
+        border: 3px solid #FFFFFF;
+        border-radius: 8px;
+    }
+    .correct button :hover{
+        transition: 1s;
+        border: 3px solid #FFFFFF;
+        color: #FFFFFF;
+        background-color: #F39F18;
+    }
+
+    .regist h2{
+        font-size: 18px;
+        text-align: center;
+        color: #FFFFFF;  
+    }
+    .regist a {
+        font-family: 'Nunito';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 18px;
+        color: #FFFFFF;
+        text-decoration: none;
+        margin-top: 18px;
+    }
+    
+    .input_corr_log {
+        color: #000000;
+        font-family: "Nunito";
+        font-size: 12px;
+        width: auto;
+    }
+
 }

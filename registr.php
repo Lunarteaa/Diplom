@@ -1,32 +1,32 @@
 <?php
-// подключение к базе данных
+
 $pdo = new PDO('mysql:host=localhost;dbname=purrfectpets', 'root', '');
 
-// обработка отправки формы
+
     if ($_SERVER['REQUEST_METHOD'] === 'POST')
     {
-        // обработка данных из формы
+       
         $username = $_POST['username'];
         $email = $_POST['email'];
         $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
-        // проверка наличия пользователя с таким же именем или email
+    
         $stmt = $pdo->prepare('SELECT * FROM users WHERE username = :username OR email = :email');
         $stmt->execute(['username' => $username, 'email' => $email]);
         $user = $stmt->fetch();
 
         if ($user)
         {
-            // пользователь уже существует, выводим сообщение об ошибке
+           
             echo 'Пользователь с таким именем или email уже зарегистрирован';
         }
         else
         {
-            // добавление пользователя в базу данных
+           
             $stmt = $pdo->prepare('INSERT INTO users (username, email, password) VALUES (:username, :email, :password)');
             $stmt->execute(['username' => $username, 'email' => $email, 'password' => $password]);
 
-            // выводим сообщение об успешной регистрации
+           
             echo 'Пользователь успешно зарегистрирован';
             header("Location: profile.php");
             exit();
@@ -64,5 +64,6 @@ $pdo = new PDO('mysql:host=localhost;dbname=purrfectpets', 'root', '');
         </div>
     </main>
     <?php include 'lib\footer.php'; ?>
+    <script src="js/toggle-burger.js"></script>
 </body>
 </html>

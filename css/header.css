@@ -9,7 +9,7 @@ font-family: "Nunito";
 }
 header {
     display: block;
-    min-width: 1920px;
+    min-width: 100vw;
     height: 24px;
     position: fixed;
     left: 0px;
@@ -17,6 +17,7 @@ header {
     top: 0px;
     background-color: #E8E8E8;
     padding: 40px;
+    z-index: 9999;
 }
 
 h1{
@@ -40,7 +41,8 @@ p{
 
 #space_t {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 1rem;
     flex-direction: row;
     max-height: 24px;
 
@@ -53,7 +55,7 @@ p{
 #name_t {
     font-weight: 400;
     font-size: 2vw;
-    padding-left: 24px;
+    padding-left: 12px;
     margin: 0px;
 }
 #letter {
@@ -86,3 +88,214 @@ p{
     transition: 0.5s;
 }
 
+#burger_ul {
+    display: none;
+}
+
+#burger_ul_open {
+    display: none;
+}
+
+@media (min-device-width: 320px) and (max-device-width: 480px) {
+
+    header {
+        display: block;
+        min-width: 320px;
+        max-width: 425px;
+        height: 40px;
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        background-color: #E8E8E8;
+        padding: 10px; /* Изменено на 20px */
+        z-index: 9999;
+    }
+    
+    h1 {
+        font-size: 3vw; /* Изменено на 3vw */
+        margin-bottom: 20px; /* Изменено на 20px */
+    }
+    
+    h2 {
+        font-size: 2.5vw; /* Изменено на 2.5vw */
+        margin-bottom: 20px; /* Изменено на 20px */
+    }
+    
+    h3 {
+        font-size: 2vw; /* Изменено на 2vw */
+    }
+    
+    h4 {
+        font-size: 1.8vw; /* Изменено на 1.8vw */
+    }
+    
+    p {
+        font-size: 1.6vw; /* Изменено на 1.6vw */
+    }
+    
+    #space_t {
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        min-width: 320px;
+        max-width: 425px;
+        gap: 1rem;
+        flex-direction: row;
+        max-height: 40px;
+        
+    }
+    
+    #logo_t {
+        display: flex;
+        align-items: center;
+    }
+
+    #logo_t img{
+        width: 40px;
+        height: 40px
+    }
+    
+    #name_t {
+        font-weight: 400;
+        font-size: 20px; /* Изменено на 2.5vw */
+        padding-left: 12px; /* Изменено на 12px */
+        margin: 0;
+    }
+    
+    #row_ul {
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        align-self: center;
+        flex-shrink: 1;
+        padding-inline-start: 4px;
+    }
+    
+    #header_li {
+        list-style-type: none;
+        padding: 2px 8px; /* Изменено на 8px 32px */
+        font-size: 2vw; /* Изменено на 2vw */
+    }
+    
+    #button_purchase {
+        align-self: center;
+        padding-right: 10px; /* Изменено на 40px */
+        width: 40px;
+        height: 40px;
+    }
+    
+    .link_head {
+        text-decoration: none;
+        transition: 0.5s;
+        color: black;
+    }
+    
+    .link_head:hover {
+        color: #F39F18;
+        transition: 0.5s;
+    }
+
+    #burger_ul {
+        display: flex;
+        align-self: center;
+        width: 25px;
+        height: 25px;
+        border-radius: 0%;
+        cursor: pointer;
+        overflow: hidden;
+        align-content: space-around;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        justify-content: space-evenly;    
+        align-items: center;
+    }
+
+    #burger_ul span {
+        
+        box-sizing: border-box;
+        display: block;
+        width: 20px;
+        height: 1px;
+        transform: translate(-0%, -0%);
+        background-color: #000000;
+        transition: all 0.5s;
+    }
+    
+    
+    /* #burger_ul.active span:nth-of-type(1) {
+        background-color: rgba(0, 0, 255, 0);
+        transition: 0.3s;
+    }
+    #burger_ul.active span:nth-of-type(2) {
+        top: 50%;
+        transform: translate(-50%, 0%) rotate(45deg);  
+    }
+    #burger_ul.active span:nth-of-type(3) {
+        top: 50%;
+        transform: translate(-50%, 0%) rotate(-45deg); 
+    } */
+    
+    
+    #burger_ul_open {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 60%;
+        height: 100%;
+        padding: 0px;
+        background:  #E8E8E8;
+        transform: translateX(-100%);
+        transition: 0.5s; 
+    }
+    #burger_ul_open.active {
+        transform: translateX(0);
+        padding: 0;
+    }
+    #burger_ul_open li {
+        list-style-type: none;
+        font-size: 16px;
+    }
+
+    .hover_side {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 50px;
+        transition: 0.3s;
+    }
+
+    .hover_side:hover {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 50px;
+        background-color: #d6d6d6;
+        transition: 0.3s;
+    }
+
+    .link_head_side {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50px;
+        width: 200px;
+        text-decoration: none;
+        transition: 0.1s;
+        color: black;
+    }
+    
+    .link_head_side:active{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50px;
+        width: 200px;
+        text-decoration: none;
+        color: #F39F18;
+        transition: 0.1s;
+    }
+}

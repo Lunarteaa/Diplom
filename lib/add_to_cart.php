@@ -2,52 +2,62 @@
 session_start();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Проверяем, аутентифицирован ли пользователь
+    
     if (isset($_SESSION['user_id'])) {
         $productId = $_POST['product_id'];
         $quantity = $_POST['quantity'];
 
-        // Добавляем товар в корзину
+        
         addToCart($productId, $quantity);
     } else {
-        header("Location: registration.php");
+        
+        echo '<script>';
+        echo 'alert("Ошибка: Для добавления товара в корзину необходимо авторизоваться.");';
+        echo 'window.history.back();'; 
+        echo '</script>';
     }
 }
-// Определение функции addToCart()
+
+
 function addToCart($productId, $quantity) {
     include 'db_connect.php';
-   // Проверка соединения
-   if ($link->connect_error) {
-       die("Ошибка подключения: " . $link->connect_error);
-   }
+    
+    if ($link->connect_error) {
+        die("Ошибка подключения: " . $link->connect_error);
+    }
 
-   // Подготовка SQL-запроса
-   $sql = "INSERT INTO shopping_cart (user_id, product_id, quantity) VALUES (?, ?, ?)";
-   
-   // Создание подготовленного выражения
-   $stmt = $link->prepare($sql);
+    
+    $sql = "INSERT INTO shopping_cart (user_id, product_id, quantity, price) VALUES (?, ?, ?, ?)";
 
-   // Привязка параметров
-   $stmt->bind_param("iii", $_SESSION['user_id'], $productId, $quantity);
+    
+    $stmt = $link->prepare($sql);
 
-   // Выполнение подготовленного выражения
-   $stmt->execute();
+    
+    $price = 10; 
 
-   // Проверка результата выполнения запроса
-   if ($stmt->affected_rows > 0) {
-       // Товар успешно добавлен в корзину
-       echo "Товар успешно добавлен в корзину.";
-       echo '<br><a href="/cart.php">Перейти в корзину</a>'; // Ссылка на страницу "Корзина"
-        echo '<br><a href="javascript:history.back()">Назад</a>'; // Ссылка "Назад"
-   } else {
-       // Произошла ошибка при добавлении товара в корзину
-       echo "Ошибка при добавлении товара в корзину.";
-       echo '<br><a href="/cart.php">Перейти в корзину</a>'; // Ссылка на страницу "Корзина"
-       echo '<br><a href="javascript:history.back()">Назад</a>'; // Ссылка "Назад"
-   }
+    
+    $stmt->bind_param("iiid", $_SESSION['user_id'], $productId, $quantity, $price);
 
-   // Закрытие подготовленного выражения и соединения с базой данных
-   $stmt->close();
-   $link->close();
+    
+    $stmt->execute();
+
+    
+    if ($stmt->affected_rows > 0) {
+        
+        echo '<script>';
+        echo 'alert("Товар успешно добавлен в корзину.");';
+        echo 'window.history.back();'; 
+        echo '</script>';
+
+    } else {
+        echo '<script>';
+        echo 'alert("Ошибка добавления товара в корзину.");';
+        echo 'window.history.back();'; 
+        echo '</script>';
+    }
+
+    
+    $stmt->close();
+    $link->close();
 }
 ?>

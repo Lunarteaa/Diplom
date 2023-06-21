@@ -4,9 +4,15 @@
     font-style: normal ;
     font-weight: normal;
 }
+
+body {
+    margin: 0px;
+}
 footer{
     display: block;
-    /* width: 100%; */
+    flex: 0 0 auto;
+    box-sizing: border-box;
+    width: 100vw;
     height: 400px;
     position: relative;
     left: 0px;
@@ -39,21 +45,24 @@ footer{
 }
 #row_foot {
     display: flex;
-    width: 1600px;
+    width: 83%;
     flex-direction: row;
     justify-content: space-between;
 }
 #row_foot_2 {
     display: flex;
-    flex-basis: 900px;
+    flex-basis: 100vw;
+    gap: 15rem;
     padding: 16px;
-    justify-content: space-between;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
 }
 #row_foot_3 {
     display: flex;
     justify-content: flex-start;
 }
-
 #name_foot_list {
     color: #F39F18;
     font-size: 1.4vw;
@@ -81,3 +90,90 @@ footer{
     padding: 16px;
     font-size: 1vw;
 }
+
+@media (min-device-width: 320px) and (max-device-width: 480px) {
+    
+    body {
+        margin: 0px;
+    }
+
+    footer{
+        display: block; 
+        height: 300px;
+        position: relative;
+        left: 0px;
+        bottom: 0px;
+        background-color: #E8E8E8;
+        
+    }
+
+    #space_b{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        height: 48px;
+    }
+
+    #row_foot {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    #dispnone {
+        display: none;
+    }
+    #row_foot_2 {
+        display: flex;
+        gap: 0rem;
+        padding: 32px 0px;
+        flex-direction: row;
+        justify-content: center;
+        align-content: center;
+        flex-wrap: wrap;
+    }
+
+    #logo_b {
+        display: flex;
+        align-items: center;
+    }
+
+    #scale-pic {
+        width: 48px;
+        height: px;
+    }
+
+    #name_b {
+        font-weight: 400;
+        font-size: 24px;
+        padding-left: 12px;
+        margin: 0px;
+    }
+
+    #row_foot_3 {
+        width: 250px;
+        height: 40px;
+        display: flex;
+        justify-content:space-around;
+    }
+    #row_foot_3 img {
+        align-self: center;
+        padding: 12px;
+        width: 30px;
+        height: 30px;
+    }
+
+    #footer_p {
+        text-align: center;
+        display: block;
+        width: 150px;
+        align-self: center;
+        font-size: 12px;
+        padding: 0px;
+    }
+
+}
+
+
+

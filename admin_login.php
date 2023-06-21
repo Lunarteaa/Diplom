@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
 <?php include 'lib\heder.php'; ?>
     <main>
         <?php
-        // Проверка, авторизован ли уже администратор
+
         if (isset($_SESSION['admin_id'])) {
             header("Location: admin.php");
             exit();
@@ -63,5 +63,6 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
         </div>
     </main>
     <?php include("lib/footer.php"); ?>
+    <script src="js/toggle-burger.js"></script>
 </body>
 </html>

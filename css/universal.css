@@ -1,6 +1,7 @@
 body {
     background-color: #D8D8D8;
     font-family: "Nunito";
+    margin: 0px;
 }
 main {
     margin: 0px 10%;
@@ -12,7 +13,7 @@ main {
    
     margin: 36px;
     padding: 36px;
-    /* border: 1px dotted black; */
+
     box-sizing: border-box;
 }
 .part_2nd p {
@@ -38,6 +39,15 @@ main {
     flex-direction: row;
     justify-content: flex-start;
     align-items: flex-start;
+}
+#row_foot_3alt {
+    height: 100px;
+}
+
+#row_foot_3alt img {
+    width: 50px;
+    height: 50px;
+    align-self: center;
 }
 
 .img_pay {
@@ -75,9 +85,12 @@ main {
 }
 
 .a_feedback {
+    display: block;
+    text-align: center;
     color: #F39F18;
-    margin: 36px;
-    font-size: 1vw;
+    margin: 24px;
+    font-size: 1.2vw;
+    text-decoration: none;
 }
 .p_center {
     text-align: center;
@@ -86,4 +99,118 @@ main {
 }
 .yellow_col {
     color: #F39F18;
+}
+
+#color_green {
+    color: #00bf06;
+}
+#color_green:hover {
+    color: #ffffff;
+}
+#color_red {
+    color: #ff0000;   
+}
+#color_red:hover {
+    color: #ffffff;
+}
+#color_standart {
+    color: #000000;
+    text-decoration: none;
+}
+#color_standart:hover {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.input_corr_5 {
+    border: 2px solid #F39F18;
+    border-radius: 15px;
+    padding: 2px 14px;
+    width: 1250px;
+    height: 50px;
+    color: #000000;
+    font-family: "Nunito";
+    font-size: 1.2vw;
+}
+.row_in_3rd {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.row_in_3rd div{
+    margin: 24px;
+}
+
+@media (min-device-width: 320px) and (max-device-width: 480px) {
+
+    body {
+        background-color: #D8D8D8;
+        font-family: "Nunito";
+        margin: 0px;
+        min-width: 320px;
+        max-width: 425px;
+    }
+    main {
+        margin: 0px 5%;
+        height: 100%;
+        padding-top: 60px;
+    }
+    .part_2nd_about_mobile {
+        margin: 4px;
+        padding: 4px;
+        box-sizing: border-box;
+    }
+
+
+    .figure_img_2_about_mobile {
+        display: none;
+    }
+
+    .figure_img_1_about_mobile {
+        display: none;
+    }
+    
+    .part_2nd_about_mobile p {
+        font-size: 12px;
+    }
+
+    .part_2nd_about_mobile span {
+        font-size: 12px;
+    }
+    .part_2nd p {
+        font-size: 12px;
+        text-align: justify;
+        padding: 0px 0px;
+    } 
+
+    main h1 {
+        font-size: 20px;
+    }
+
+    .row_in_2nd {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: flex-start;
+    }
+
+    .row_in_2nd div{
+        margin: 4px;
+    }
+
+    .img_animal1 {
+        width: 750px;
+        height: 500px;
+        border-radius: 15px;
+        margin: 0px;
+    }
+    .a_feedback {
+        display: block;
+        text-align: center;
+        color: #F39F18;
+        margin: 24px;
+        font-size: 14px;
+        text-decoration: none;
+    }
 }

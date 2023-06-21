@@ -1,0 +1,41 @@
+@font-face {
+    font-family: 'Nunito';
+    src: url(/fonts/Nunito-VariableFont_wght.ttf) format("truetype");
+    font-style: normal ;
+    font-weight: normal;
+}
+body {
+    background: url("/img/spots_and_kitty.png") no-repeat;
+    margin: 0px 30%;
+    display: flex;
+    flex-direction: column;
+}
+h1 {
+    font-size: 2.2vw;
+    font-family: "Nunito";
+    text-align: center;
+}
+#position {
+    align-self: center;
+    width: 80%;
+    height: 80%;
+}
+#position_2 {
+    margin: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+a {
+    margin: 12px;
+    font-size: 1.4vw;
+    font-family: "Nunito";
+    text-decoration: none;
+    color: black;
+}
+a:hover {
+    color: #F39F18;
+}
+
+@media (min-device-width: 320px) and (max-device-width: 480px) {}

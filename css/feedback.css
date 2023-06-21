@@ -17,24 +17,44 @@
     margin: 0px;
 }
 .form_flex label {
-    font-size: 1.2vw;
+    font-size: 1.1vw;
     margin: 8px;
 }
 
+.row_in_feedback {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.row_in_feedback div{
+    margin: 24px;
+}
 
-
+#h3_id {
+    font-size: 1.5vw
+}
 
 .input_corr_1 {
     border: 2px solid #F39F18;
     border-radius: 15px;
+    padding: 2px 14px;
     width: 500px;
     height: 50px;
+    color: #000000;
+    font-family: "Nunito";
+    font-size: 1.2vw;
 }
 .input_corr_2 {
     border: 2px solid #F39F18;
     border-radius: 15px;
+    padding: 2px 14px;
     width: 500px;
     height: 200px;
+    color: #000000;
+    font-family: "Nunito";
+    font-size: 1.2vw;
+
 }
 .input_corr_3 {
     width: 500px;
@@ -42,22 +62,34 @@
     font-size: 1.0vw;
 }
 .input_corr_4 {
-    background-color: #F39F18;
+    margin: 2px 14px;
     border: none;
     border-radius: 15px;
-    width: 500px;
+    width: 250px;
     height: 50px;
     font-size: 1.2vw;
-    color: white;
+    color: #F39F18;
+}
+
+.input_corr_4:hover {
+    transition: 1s;
+    border: 3px solid #FFFFFF;
+    color: #FFFFFF;
+    background-color: #F39F18;
 }
 
 .visit_card {
     border: 2px solid #F39F18;
     border-radius: 15px;
     background-color: white;
-    width: 500px;
+    width: 510px;
     max-height: 450px;
 }
+
+.visit_card p {
+    margin: 0px
+}
+
 #row_foot_3alt {
     display: flex;
     justify-content: flex-start;
@@ -69,3 +101,132 @@
     align-items: center;
     justify-content: center;
 }
+
+@media (min-device-width: 320px) and (max-device-width: 480px) {
+
+    .semi-block {
+        min-width: 320px;
+        max-width: 425px;
+        max-height: 1100px;
+        margin: 12px;
+    }
+
+    .semi-block:nth-of-type(2) {
+        display: none;
+        max-width: 550px;
+        max-height: 1100px;
+        margin: 12px;
+    }
+
+    .part_2nd h3 {
+        font-size: 14px;
+        margin:8px 28px;
+        font-weight: normal;
+        text-align: left;
+    } 
+    #left_align {
+        text-align: center;
+    }
+    .form_flex {
+        display: flex;
+        flex-direction: column;
+        margin: 0px;
+    }
+    .form_flex:nth-of-type(1) {
+        height: 60px;
+    }
+    .form_flex:nth-of-type(2)  {
+        height: 60px;
+    }
+
+    .form_flex label {
+        font-size: 12px;
+        margin: 8px;
+    }
+    
+    #h3_id {
+        font-size: 14px;
+    }
+    
+    
+    
+    .input_corr_1 {
+        box-sizing: border-box;
+        border: 2px solid #F39F18;
+        border-radius: 8px;
+        padding: 4px 14px;
+        width: 270px;
+        height: 36ypx;
+        color: #000000;
+        font-family: "Nunito";
+        font-size: 12px;
+    }
+    .input_corr_2 {
+        box-sizing: border-box;
+        border: 2px solid #F39F18;
+        border-radius: 8px;
+        padding: 2px 14px;
+        width: 270px;
+        height: 80px;
+        color: #000000;
+        font-family: "Nunito";
+        font-size: 12px;
+    
+    }
+    .input_corr_3 {
+        width: 500px;
+        height: 200px;
+        font-size: 12px;
+    }
+    .input_corr_4 {
+        margin: 2px 72px;
+        border: none;
+        border-radius: 15px;
+        width: 120px;
+        height: 40px;
+        font-size: 16px;
+        color: #F39F18;
+    }
+    
+    .input_corr_4:hover {
+        transition: 1s;
+        border: 3px solid #FFFFFF;
+        color: #FFFFFF;
+        background-color: #F39F18;
+    }
+    
+    .visit_card {
+        border: 2px solid #F39F18;
+        border-radius: 15px;
+        background-color: white;
+        width: 510px;
+        max-height: 450px;
+    }
+
+    .row_in_feedback div{
+        margin: 12px 24px;
+    }
+
+    .row_in_feedback {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: flex-start;
+    }
+    
+    #logo_balt {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #mobile_form {
+        margin: 12px 28px;
+        text-align: center;
+    }
+
+}
+
+
+
+

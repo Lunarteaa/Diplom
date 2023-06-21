@@ -2,9 +2,9 @@
     session_start();
         include("db_connect.php");
 
-          // Проверка, что форма была отправлена
+          
         if ($_SERVER['REQUEST_METHOD'] === "POST") {
-          // Получение данных формы
+         
             $name = $_POST['name'];
             $description = $_POST['description'];
             $photoPath = $_POST['photoPath'];

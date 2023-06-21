@@ -10,11 +10,11 @@
 <body>
 <?php include 'lib\heder.php'; ?>
     <main>
-        <section class="part_2nd">
+        <section class="part_2nd part_2nd_about_mobile">
             <h1>Возврат товара</h1>
             <div>
                 <div>
-                    <img src="/img/Group_19.png"  class="float_text_l figure_img_1">
+                    <img src="/img/Group_19.png"  class="float_text_l figure_img_1 figure_img_1_about_mobile ">
                 </div>
                 <div>
                     <p>Мы стремимся обеспечить высокое качество обслуживания и предоставить только лучшие товары для ваших домашних животных.</p> 
@@ -31,5 +31,6 @@
         </section>
     </main>
     <?php include 'lib\footer.php'; ?>
+    <script src="js/toggle-burger.js"></script>
 </body>
 </html>

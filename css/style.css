@@ -20,6 +20,7 @@ body{
     background: #F39F18;
     background-image: url(/img/Rectangle1.png);
     color: #fff;
+    margin: 0px;
 }
 
 .Name_shop {
@@ -132,4 +133,70 @@ body{
 .link a:hover {
     color: #ffe135;
     transition: 0.5s;
+}
+
+@media (min-device-width: 320px) and (max-device-width: 480px) {
+
+    .Name_shop {
+        font-size: 80px;
+        font-family: 'Nunito';
+        font-weight: bold;
+        user-select: none;
+        cursor: pointer;
+        text-align: center;
+    }
+
+    .horizontal{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+    }
+
+    .link a{
+        transform: rotate(0deg);
+        font-size: 32pt;
+    }
+
+    .link{
+        width: 100%;
+        height: 20%;
+        background-color: #404040;
+        transition: .5s;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .toggle {
+        position: fixed;
+        top: 0;
+        /* left: 0; */
+        width: 100%;
+        height: 100%;
+        padding: 0px;
+        background: #FFEFBA;
+        transform: translateY(-100%);
+        transition: 0.5s; 
+    }
+
+    .toggle.active {
+        transform: translateY(0);
+        padding: 0;
+    }
+
+    .toggle-btn {
+        width: 50px;
+        height: 50px;
+        position: fixed;
+        right: 10px;
+        top: 10px;
+        /* background: #2f2f2f; */
+        border-radius: 50%;
+        z-index: 99;
+        cursor: pointer;
+        overflow: hidden;
+    }
 }

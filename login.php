@@ -2,25 +2,25 @@
 	session_start();
 	include ("lib\db_connect.php");
 
-	// проверка, что форма была отправлена
+	
 	if ($_SERVER['REQUEST_METHOD'] == "POST")
 	{
 		$email = $_POST['email'];
 		$password = $_POST['password'];
 
-		// поиск пользователя в базе данных
+		
 		$sql = "SELECT * FROM users WHERE email='$email'";
 		$result = mysqli_query($link, $sql);
 		$row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
-		// если пользователь найден и пароль верный
+		
 		if (mysqli_num_rows($result) == 1 && password_verify($password, $row['password']))
 		{
 
-			// сохраняем id пользователя в сессию
+			
 			$_SESSION['user_id'] = $row['id'];
 
-			// перенаправляем на страницу профиля
+			
 			header("Location: profile.php");
 			exit();
 		}
@@ -44,7 +44,7 @@
 	<?php include 'lib\heder.php'; ?>
     <main>
     	<?php
-			// если пользователь авторизован, перенаправляем на страницу профиля
+			
 			session_start();
 			if (isset($_SESSION['user_id']))
 			{
@@ -69,5 +69,6 @@
 		</div>
     </main>
 	<?php include 'lib\footer.php'; ?>
+	<script src="js/toggle-burger.js"></script>
 </body>
 </html>

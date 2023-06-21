@@ -11,11 +11,11 @@
 <body>
 <?php include 'lib\heder.php'; ?>
     <main>
-       <section class="part_2nd">
+       <section class="part_2nd part_2nd_about_mobile">
             <h1 id="left_align">Обратная связь</h1>
-            <div class="row_in_2nd">
+            <div class="row_in_feedback">
                 <div class="semi-block">
-                    <h3>У вас есть вопросы или предложения, свяжитесь с нами</h3>
+                    <h3 id="h3_id">У вас есть вопросы или предложения, свяжитесь с нами</h3>
                     <form action="#" method="post">
                     <?php include 'lib\mail.php'; ?>
                         <div class="form_flex">
@@ -27,12 +27,12 @@
                             <input type="tel" id="phone" name="phone" required class="input_corr_1"><br><br>
                         </div>
                         <div class="form_flex">
-                            <label for="feedback">Отправьте нам запрос или предложение:</label><br>
+                            <label for="feedback">Отправьте нам запрос или предложение:</label>
                             <textarea id="feedback" name="feedback" rows="5" cols="30"  class="input_corr_2"></textarea><br><br>
                         </div>
-                        <div class="">
+                        <div id="mobile_form">
                             <input type="checkbox" id="consent" name="consent" required>
-                            <label for="consent" class="input_corr_3">Я согласен(на) на обработку персональных данных</label><br><br>    
+                            <label for="consent" class="input_corr_3">Я согласен(на) на обработку персональных данных</label>   
                         </div>
                         <div class="">
                         <button type="submit" class="input_corr_4">Отправить</button>
@@ -66,4 +66,5 @@
        </section>
     </main>
     <?php include 'lib\footer.php'; ?>
+    <script src="js/toggle-burger.js"></script>
 </body>

@@ -1,6 +1,8 @@
 let slider = document.querySelector('#hello');
-
+slider.style.backgroundImage = "url('/img/Group_11.png')";
+slider.style.width='100%';
 let index = 0;
+
 
 setInterval(() => {
   if (index < 4) {

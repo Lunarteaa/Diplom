@@ -2,13 +2,13 @@
     session_start();
     include("lib\db_connect.php");
 
-    // проверка, что пользователь авторизован
+    
     if(!isset($_SESSION['user_id'])){
         header("Location: index.php");
         exit();
     }
 
-    // поиск пользователя в базе данных
+   
     $user_id = $_SESSION['user_id'];
     $sql = "SELECT * FROM users WHERE id='$user_id'";
     $result = mysqli_query($link, $sql);
@@ -57,7 +57,7 @@
                                 <h4>Почта</h4> <p class="answer"><?php echo $row['email']; ?></p>
                             </div>
                         </div>
-                        <form method="post" action="logout.php">
+                        <form method="post" action="logout.php" class="win_1_flex">
                             <input type="submit" value="Выйти" id="login_button">
                         </form>
                     </div>
@@ -67,7 +67,7 @@
                             <div>
                                 <h3>Адреса доставки</h3>
                                 <p>Текущий адрес<br><?php echo $row['address']; ?></p>
-                                <button onclick="window.location.href = 'test.php';" id="login_button">Добавить адрес</button>
+                                <button onclick="openTab('tab4')" id="login_button">Редактировать адрес</button>
                             </div>
                             <div class="win_2_flex">
                                 <h4>Зачем добавлять адреса?</h4>
@@ -84,8 +84,67 @@
                     <div class="tab-content" data-tab="tab3">
                         <h3>Мои заказы</h3>
                         <div  id="win_3">
-                                <img src="img\noorders.png">
-                                <button onclick="window.location.href = 'categories.php';" id="login_button">В КАТАЛОГ</button>
+                        <div class="win_orders">
+                        <?php
+                            session_start();
+                           
+                            include 'lib/db_connect.php';
+                            
+                           
+                            $userId = $_SESSION['user_id'];
+                            
+                            
+                            $query = "SELECT orders.id, orders.order_date, orders.order_status
+                            FROM orders
+                            WHERE orders.user_id = '$userId'";
+                            $result = mysqli_query($link, $query);
+                            if (mysqli_num_rows($result) > 0) {
+                                while ($row = mysqli_fetch_assoc($result)) {
+                                    $orderId = $row["id"];
+                                    
+                                   
+                                    echo '<div class="order_info">';
+                                    echo '<p class="txt_info">Дата заказа: ' . $row["order_date"] . '</p>';
+                                    echo '<p class="txt_info">Статус заказа: ' . $row["order_status"] . '</p>';
+                                    
+                                    
+                                    $itemsQuery = "SELECT order_items.quantity, products.name, products.price, products.photoPath
+                                                FROM order_items
+                                                INNER JOIN products ON order_items.product_id = products.id
+                                                WHERE order_items.order_id = '$orderId'";
+                                    $itemsResult = mysqli_query($link, $itemsQuery);
+                                    $totalPrice = 0;
+                                    
+                                    if (mysqli_num_rows($itemsResult) > 0) {
+                                        while ($itemRow = mysqli_fetch_assoc($itemsResult)) {
+                                            echo '<div class="order_content">';
+                                            echo '<div class="order_content_img">';
+                                            echo '<img src="' . $itemRow["photoPath"] . '" alt="Товар">';
+                                            echo '</div>';
+                                            echo '<div class="order_content_txt">';
+                                            echo '<p>' . $itemRow["name"] . '</p>';
+                                            echo '<p id="txtsize">Цена: ' . $itemRow["price"] . '&#8381;</p>';
+                                            echo '<p id="txtsize">Количество: ' . $itemRow["quantity"] . '</p>';
+                                            echo '</div>';
+                                            $itemTotalPrice = $itemRow["price"] * $itemRow["quantity"];
+                                            $totalPrice += $itemTotalPrice;
+                                            echo '</div>';
+                                        }
+                                        
+                                        echo '<p class="txt_info">Итоговая цена заказа: ' . $totalPrice . '&#8381;</p>';
+                                    } else {
+                                        echo "Нет данных о товарах в заказе.";
+                                    }
+                                    
+                                    echo '</div>';
+                                }
+                            } else {
+                                echo '<img src="img\noorders.png">
+                                <button onclick="window.location.href = "categories.php";" id="login_button">В КАТАЛОГ</button>';
+                            }
+                            mysqli_close($link);
+                        ?>
+                            </div>
                         </div>
                     </div>
 
@@ -94,25 +153,25 @@
                         
                         <?php
                             session_start();
-                            $user_id = $_SESSION['user_id']; // Получение ID пользователя из сессии
+                            $user_id = $_SESSION['user_id']; 
 
-                            // Подключение к базе данных и запрос данных пользователя
+                            
                             $pdo = new PDO('mysql:host=localhost;dbname=purrfectpets', 'root', '');
                             $stmt = $pdo->prepare('SELECT * FROM users WHERE id = :id');
                             $stmt->execute(['id' => $user_id]);
                             $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
 
-                            // обработка отправки формы
+                           
                             if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-                                // обработка данных из формы
+                                
                                 $username = $_POST['username'];
                                 $address = $_POST['address'];
                                 $phone = $_POST['phone'];
                                 $birthday = $_POST['birthday'];
                                 $gender = $_POST['gender'];
 
-                                // добавление записи в базу данных
+                               
                                 $stmt = $pdo->prepare('INSERT INTO users (username, address, phone, birthday, gender) VALUES (:username, :address, :phone, :birthday, :gender)');
                                 $stmt->execute([
                                     'username' => $username,
